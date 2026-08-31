@@ -3,7 +3,7 @@ id: L1
 title: Build Marketer7 and Signal7 integration
 status: active
 created: 2026-08-31T11:21:42
-updated: 2026-08-31T12:37:47
+updated: 2026-08-31T12:39:50
 ---
 
 # L1 — Build Marketer7 and Signal7 integration
@@ -72,10 +72,10 @@ Approved at: 2026-08-31T11:55:49
 Stabilize and test the `marketer` Agent Skills workflow first, with all v1 experiment state beneath `.marketer/`. Reserve a versioned external-evidence reference contract for Analyzer7, which will keep its own canonical observability evidence beneath `.analyzer/`. Then integrate through a file-based, versioned Marketer7-to-Signal7 execution brief that materializes only optional execution metadata into Signal7 state.
 
 ## Current focus
-P5 complete; next move: commit the independently verified Marketer7 repository and clean Signal7 integration branch, then push the public Marketer7 repository.
+L1 complete; Marketer7 is public and the isolated Signal7 integration branch is published with all verified contracts intact.
 
 ## Current bar
-record the independently verified implementation in Git and publish the Marketer7 repository
+maintain the verified Marketer7 and Signal7 contract boundary; UI remains a separately approved future milestone
 
 ## Parts
 - P1 — Architecture reconnaissance and compatibility inventory — done
@@ -214,6 +214,7 @@ Approved at: 2026-08-31T12:31:20
 - 2026-08-31T12:26:58 — P4 passed: `run-marketer-fixtures.mjs` passes 16/16 positive and negative cases; `validate-marketer-package.mjs` still passes 122 checks; the clean Signal7 integration worktree has no diff. P5 planning can now begin.
 - 2026-08-31T12:31:20 — User approved the P5 clean-worktree optional-metadata integration plan. Begin the file-contract integration without Laravel/UI changes.
 - 2026-08-31T12:37:47 — P5 passed: Signal7's 21 static fixtures (legacy plus Marketer bridge) and Marketer7's 16 deterministic fixtures pass; package validation remains at 122 checks. The implemented bridge is contract-only and no UI/Laravel file changed.
+- 2026-08-31T12:39:50 — Git publication completed: Marketer7 commit `bfcb7a7` is pushed to public `main`; Signal7 integration commit `5ac859b` is pushed to `codex/marketer7-integration`.
 
 ## Relevant artifacts
 - ../signal7/signal7 — existing Signal7 repository to inspect and modify only within the approved integration boundary.
@@ -235,6 +236,7 @@ Approved at: 2026-08-31T12:31:20
 - 2026-08-31T12:26:58 — P4 complete: clear alignment by approving the P5 optional-metadata integration plan for the clean Signal7 worktree.
 - 2026-08-31T12:31:20 — P5 approved and started: complete the optional Signal7 contract integration, regression validation, and documentation without Laravel/UI changes.
 - 2026-08-31T12:37:47 — P5 implementation and validation complete: record the independently verified implementation in Git and publish the Marketer7 repository.
+- 2026-08-31T12:39:50 — L1 complete: maintain the verified Marketer7 and Signal7 contract boundary; UI remains a separately approved future milestone.
 
 ## Route shifts
 - None yet.
@@ -260,6 +262,7 @@ Approved at: 2026-08-31T12:31:20
 - 2026-08-31T12:26:58 — P4 is complete and satisfied the required harness-before-Signal7 gate. P5 may modify only the clean Signal7 worktree through optional, feature-detected file contracts; Laravel/UI remains excluded.
 - 2026-08-31T12:31:20 — User approved P5. Signal7 changes are limited to its clean integration worktree, Agent Skills contracts, templates, static fixtures, and documentation.
 - 2026-08-31T12:37:47 — Completed the optional Signal7 bridge through feature detection, not a schema migration: `signal-marketer` accepts only `signal7-execution-brief/v1`; Signal7 retains optional origin metadata and executor-side results; Marketer7 retains experiment ownership. UI/Laravel is still deferred.
+- 2026-08-31T12:39:50 — Published the two independent commits. Marketer7 is public at `colorrage/marketer7`; Signal7's change remains isolated for review/merge on `codex/marketer7-integration`.
 
 ## Starting point
 - New public repository `colorrage/marketer7`, intentionally empty except for Git metadata; the supplied task brief is the source of scope. Signal7 lives at ../signal7/signal7 and Hyper7 at ../hyper7/hyper7. The first approved work is reconnaissance, not implementation.
@@ -386,8 +389,28 @@ Approved at: 2026-08-31T12:31:20
 
 **Next:** continue
 
+### Cycle 7 — 2026-08-31T12:39:50 — Record and publish verified repositories
+
+**Intent:** validate
+
+**Observe:** The implementation commits succeeded locally: Marketer7 `bfcb7a7` on `main` and Signal7 `5ac859b` on `codex/marketer7-integration`. The first Marketer7 push failed because its initial SSH remote had no usable SSH access; GitHub CLI confirmed the repository existed and was public.
+
+**Orient:** The failure was transport-only, not a repository/contract failure. Use the existing authenticated GitHub HTTPS setup without exposing a token, then verify both remotes have the intended branches.
+
+**Prior belief:** The user-approved GitHub credentials could publish both independent commits once the Marketer remote used the available authenticated transport.
+
+**Action:** Published the Signal7 integration branch, changed only the local Marketer7 remote transport from SSH to HTTPS, configured Git to use the existing GitHub CLI credential helper, and published Marketer7 `main`.
+
+**Evidence:** Git push confirmed `codex/marketer7-integration -> origin/codex/marketer7-integration` and printed the review URL. GitHub CLI confirmed `colorrage/marketer7` visibility is `PUBLIC`; the retry confirmed `main -> origin/main`.
+
+**Learning:** The public repository and review branch are both available without broadening scope; cross-system integration stays reviewable as an isolated Signal7 branch.
+
+**Route impact:** loop complete
+
+**Next:** complete
+
 ## Handoff cues
-- Next atomic move: Commit the verified Marketer7 repository and clean Signal7 integration branch; push Marketer7 to its public remote.
+- Next atomic move: None. For a future Laravel/UI milestone, start a new approved task from `FUTURE.md`; for Signal7 adoption, review and merge the isolated integration branch.
 - Current risk or uncertainty: Marketer7 needs complete v1 experiment measurement and evaluation without duplicating or blocking on Analyzer7's future independent evidence ownership.
 - Dirty or unvalidated state: Marketer7 loop state is newly created and uncommitted; the original Signal7 worktree remains independently dirty and must be preserved.
 
@@ -398,7 +421,8 @@ Approved at: 2026-08-31T12:31:20
 - `scripts/run-signal-fixtures.sh` in the clean integration worktree — PASS (21 fixtures, 0 failures).
 - `bash -n scripts/run-signal-fixtures.sh` and clean-worktree `git diff --check` — PASS.
 - No Signal7 Laravel/UI file changed; the original dirty Signal7 worktree was not modified.
+- Marketer7 `main` and Signal7 `codex/marketer7-integration` are both pushed to their GitHub remotes.
 
 ## Outcome
-Close summary: Marketer7 and the optional Signal7 execution-contract integration are implemented and verified; Git recording/push remains.
-Verify link: None yet.
+Close summary: Marketer7 is a public, verified Agent Skills experiment workflow. Signal7 has a separately published, backwards-compatible execution-brief integration branch. Laravel/UI work remains deferred.
+Verify link: https://github.com/colorrage/marketer7
