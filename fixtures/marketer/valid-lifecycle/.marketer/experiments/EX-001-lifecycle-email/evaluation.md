@@ -7,6 +7,7 @@ evaluated_at: 2026-08-10T00:02:00Z
 primary_metric: qualified_signups
 primary_value: 125
 criteria_locked_at: 2026-08-02T09:00:00Z
+evidence_strength: A
 ---
 
 # Evaluation — EX-001
@@ -22,9 +23,10 @@ criteria_locked_at: 2026-08-02T09:00:00Z
 
 The primary KPI meets the locked success threshold.
 
-## Confidence and confounders
+## Evidence strength, confidence, and confounders
 
-- Confidence: medium
+- Evidence strength: A
+- Conclusion confidence: medium
 - Confounders: Fixture values do not establish causality.
 - Causality claim: no causal conclusion from this record alone.
 

@@ -7,6 +7,7 @@ owner: <owner>
 created_at: <ISO-8601 timestamp>
 primary_kpi: <metric name>
 primary_kpi_priority: decisive
+primary_kpi_tier: <payment | willingness_to_pay | retention | activation | signup | click | engagement | impression | other>
 baseline_status: unknown
 ---
 
@@ -14,7 +15,30 @@ baseline_status: unknown
 
 ## Goal
 
-State the business outcome, primary KPI, time horizon, and known baseline or why it is unknown.
+State the concrete business outcome and time horizon.
+
+## Why
+
+Explain why this outcome matters now and what decision it should inform.
+
+## KPIs
+
+| Role | Metric | Business-value tier | Notes |
+| --- | --- | --- | --- |
+| Primary (decisive) | <metric> | <tier from evaluation-policy.md> | <unit and interpretation> |
+| Secondary (explanatory) | <metric> | <tier or other> | <why it cannot reverse the primary verdict> |
+
+## Baseline
+
+Record the known baseline with source and period, or `unknown` with the reason and interpretation limitation.
+
+## Definition of done
+
+State the business outcome that closes this mission, including the decision/evidence needed.
+
+## Constraints
+
+- <authority, channel, compliance, budget, timing, or evidence constraint>
 
 ## Current route
 

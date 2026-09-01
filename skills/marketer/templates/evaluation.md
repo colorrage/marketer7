@@ -7,6 +7,7 @@ evaluated_at: null
 primary_metric: <metric and unit>
 primary_value: unknown
 criteria_locked_at: <timestamp copied from experiment.md>
+evidence_strength: unknown
 ---
 
 # Evaluation — EX-<NNN>
@@ -24,9 +25,10 @@ The verdict is based on this table alone. Secondary metrics may explain, never r
 
 `not_started` — replace only with `win`, `loss`, or `inconclusive` after measurement. Use `cancelled` only when the experiment was explicitly cancelled before a normal evaluation.
 
-## Confidence and confounders
+## Evidence strength, confidence, and confounders
 
-- Confidence: unknown
+- Evidence strength: unknown (the weakest cited primary-evidence grade; grade E cannot support a numeric result)
+- Conclusion confidence: unknown
 - Confounders: <known external changes, missing tracking, or `unknown`>
 - Causality claim: no causal conclusion from this record alone.
 

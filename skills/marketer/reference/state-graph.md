@@ -19,4 +19,6 @@ draft -> planned -> reviewed -> approved -> running -> measurement_pending -> ev
 | `measurement_pending → evaluating` | measurement | measurement record covering the locked window, or explicit unknown/missing result |
 | `evaluating → terminal` | evaluation | threshold comparison, uncertainty, learning, route recommendation |
 
+An approved criteria override after execution completion is not a lifecycle transition. It is a narrow, immutable governance record that changes only declared success/failure thresholds and must be linked to a decision before a subsequent evaluation can use it.
+
 No skill may skip a transition or write a terminal verdict from publication, an executor's success report, or a secondary engagement metric. The mission route may change only through a separate append-only decision after evaluation.

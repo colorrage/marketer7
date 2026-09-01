@@ -5,7 +5,7 @@ description: Creates, resumes, and records the durable strategic state of one Ma
 
 # Mission phase
 
-Use only after the `marketer` router has bootstrapped `.marketer/` and allocated a unique `M<N>` ID. Read `../marketer/reference/bootstrap.md`, `data-model.md`, `ownership.md`, and `memory.md` first.
+Use only after the `marketer` router has bootstrapped `.marketer/` and allocated a unique `M<N>` ID. Read `../marketer/reference/bootstrap.md`, `data-model.md`, `evaluation-policy.md`, `ownership.md`, and `memory.md` first.
 
 ## Write ownership
 
@@ -13,7 +13,7 @@ Write only `missions/M<N>-<slug>/mission.md`. The router allocates IDs and appli
 
 ## Create or resume
 
-For a new mission, copy the mission template and record a concrete business outcome, decisive primary KPI, time horizon, owner, known baseline or unknown-baseline rationale, initial route, and evidence digest. Do not claim a metric baseline without a source.
+For a new mission, copy the mission template and record a concrete business outcome, why it matters, decisive primary KPI and declared business-value tier, ordered secondary KPIs, time horizon, owner, known baseline or unknown-baseline rationale, definition of done, constraints, initial route, and evidence digest. Do not claim a metric baseline without a source.
 
 For a resumed mission, read its experiment index, current route, route decisions, and relevant memory. Report its active experiments and the next legal experiment action. Do not replace historical route decisions with a summary.
 

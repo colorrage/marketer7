@@ -16,5 +16,6 @@ updated_at: 2026-08-10T00:00:00Z
 - Metric: qualified_signups
 - Value and unit: 125 signups
 - Period: locked seven-day window
+- Evidence strength: A
 - Data quality: medium
 - Note: Deterministic fixture measurement only.

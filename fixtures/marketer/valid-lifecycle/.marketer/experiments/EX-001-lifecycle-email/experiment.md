@@ -28,6 +28,7 @@ If we send a lifecycle email to activated trial users through email, then qualif
 | Action type | lifecycle email |
 | Executor | signal7 |
 | Primary metric | qualified_signups |
+| Primary KPI tier | signup |
 | Secondary metrics | open_rate, explanatory only |
 | Baseline | 80 qualified_signups in the prior seven days |
 | Success threshold | >= 120 |

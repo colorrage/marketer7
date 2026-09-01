@@ -15,6 +15,7 @@ criteria_fingerprint: null
 | --- | --- | --- | --- |
 | Falsifiable hypothesis | needs_input | `experiment.md` | <finding> |
 | Primary KPI and baseline | needs_input | `experiment.md` | <finding> |
+| KPI tier and evidence plan | needs_input | `experiment.md`, `evaluation-policy.md` | <finding> |
 | Thresholds and window | needs_input | `experiment.md` | <finding> |
 | Tracking source | needs_input | `experiment.md` | <finding> |
 | Claims and executor scope | needs_input | `experiment.md` | <finding> |
@@ -23,6 +24,16 @@ criteria_fingerprint: null
 ## Findings
 
 - <severity: blocking / advisory> — <finding>
+
+## Locked definition snapshot
+
+On a passing review, replace this block with the exact normalized source from `experiment.md`, starting at `## Hypothesis` and ending immediately before `## Criteria lock`. Preserve its headings, rows, and values verbatim inside this one fenced block.
+
+```markdown
+## Hypothesis
+
+<copy the normalized reviewed definition here>
+```
 
 ## Gate verdict
 
@@ -40,4 +51,4 @@ Reasons:
 
 ## Decision
 
-On `pass`, store the SHA-256 fingerprint of the normalized `## Hypothesis` through `## Criteria lock` portion of `experiment.md` in `criteria_fingerprint`. This review then authorizes a router-applied `reviewed → approved` transition and criteria lock. On any other verdict, return the experiment to `draft` for material repair; do not edit past evidence or execute work.
+On `pass`, copy the normalized reviewed definition into the single `Locked definition snapshot` fence, then store its SHA-256 fingerprint in `criteria_fingerprint` and run the review phase validator. Only a passing validation authorizes a router-applied `reviewed → approved` transition and criteria lock. On any other verdict, return the experiment to `draft` for material repair; do not edit past evidence or execute work.

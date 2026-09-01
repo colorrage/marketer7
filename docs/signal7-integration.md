@@ -24,9 +24,10 @@ The contract is feature-detected: legacy Signal7 task, asset, and ledger files w
 
 ## Local verification
 
-Run the Marketer harness from this repository:
+Run the Marketer static contract check and behavioral harness from this repository:
 
 ```sh
+node scripts/validate-marketer-package.mjs
 node scripts/run-marketer-fixtures.mjs
 ```
 
@@ -35,3 +36,5 @@ Run Signal7's integration and legacy regression suite from the clean Signal7 wor
 ```sh
 scripts/run-signal-fixtures.sh
 ```
+
+The Marketer harness proves that executor-side publication cannot replace the locked primary KPI or its evidence. The Signal7 suite includes both a valid Marketer-originated task and an intentionally malformed one; the latter must be rejected for the expected metadata mismatch without suppressing failures in any other fixture.

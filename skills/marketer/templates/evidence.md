@@ -21,6 +21,7 @@ Append observations; do not alter earlier entries. Missing values are `unknown`,
 - Metric: <metric>
 - Value and unit: <value/unit or unknown>
 - Period: <time period>
+- Evidence strength: <A | B | C | D | E; E is contextual only and cannot support a numeric primary value>
 - Data quality: high | medium | low | unknown
 - Note: <factual observation and limitations>
 -->
