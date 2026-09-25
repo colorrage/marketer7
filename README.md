@@ -18,7 +18,7 @@ It can prepare a versioned handoff for Signal7, but it does not write content, p
 | Static package checks, full-state validation, and deterministic behavioral fixtures | Shipped |
 | Live analytics, ad-platform, SEO, CMS, or publishing adapters | Not shipped |
 | Laravel/UI projection | Deferred; see [FUTURE.md](FUTURE.md) |
-| Analyzer7 as an independent evidence provider | Future integration; its canonical state remains external |
+| Analyzer7 as an independent evidence provider | Shipped as file contracts (`external-evidence-reference/v1`, `analyzer-opportunity/v1`) plus a read-only pending-exports helper; canonical state remains in `.analyzer/` |
 
 ## Install for Codex
 
@@ -221,9 +221,17 @@ All other criterion changes require a new review cycle. This prevents a result f
 | --- | --- |
 | Marketer7 | Strategy, mission/experiment criteria, measurement interpretation, evaluation, learning, and rerouting. |
 | Signal7 | Bounded asset execution, claims/brand review, publication, and executor-side factual records. |
-| Analyzer7 | Future independent observability/evidence provider; its canonical evidence stays external. |
+| Analyzer7 | Independent observability/evidence provider; its canonical evidence stays in `.analyzer/`. |
 
 For an approved experiment, Marketer7 can create `signal7-execution-brief/v1`. Signal7 may return task-local execution facts, but neither system writes the other's state root. A Signal7 publication or completion record is evidence to measure later; it is never an experiment verdict. See [Signal7 integration](docs/signal7-integration.md) for the complete handoff contract.
+
+Analyzer7 hands over two versioned files in its own `.analyzer/exports/`: `external-evidence-reference/v1` for a measured experiment, and `analyzer-opportunity/v1` for an SEO opportunity that is a backlog candidate. To see what is pending, run:
+
+```sh
+node scripts/list-analyzer-exports.mjs <project-root> [--json]
+```
+
+The helper is read-only. It rejects unknown contract versions, gives the exact `contracts/` target for each evidence reference, and prints a ready backlog row (keeping the `analyzer7:SEO-OPP-NNN` reference) for each opportunity. Copying a reference and adding a backlog row stay normal Marketer7 actions, through `marketer-measure` and `marketer-backlog`.
 
 Laravel/UI projection is intentionally out of scope until the file-based harness is stable; see [FUTURE.md](FUTURE.md).
 

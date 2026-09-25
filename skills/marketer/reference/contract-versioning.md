@@ -6,5 +6,6 @@ Boundary files declare a stable `contract` identifier and `schema_version`. Vers
 | --- | --- | --- | --- |
 | `signal7-execution-brief/v1` | Marketer7 execution phase | Signal7 integration | execution scope only; optional metadata; no direct state writes |
 | `external-evidence-reference/v1` | external provider or Marketer7 reference phase | Marketer7 evidence phase | reference/provenance only; canonical source remains external |
+| `analyzer-opportunity/v1` | Analyzer7 (`.analyzer/exports/opportunities/`) | Marketer7 backlog | a backlog candidate with its evidence reference; never an approval, experiment, or execution |
 
 Consumers must reject an unknown major contract version with a clear `blocked` verdict. They must tolerate missing optional fields and unknown additive fields. A breaking meaning or required-field change needs a new `/v<N>` contract; never reinterpret a prior contract silently.
